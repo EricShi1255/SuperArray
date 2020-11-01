@@ -24,12 +24,28 @@ public class SuperArray {
                 data[i] = element;
             }
         }
+        if (!added) {
+            size();
+            resize();
+            data[size]= element;
+        }
+
     return true;
     }
     public String get(int index) {
         //-Returns the element at the specified position in this list. [For Now Assume the index is 0 to size-1]
         return(data[index]);
     }
+
+    public String set(int index, String element) {
+        //-Replaces the element at the specified position in this list with the specified element.
+        //Return the value you replaced. [Assume the index is 0 to size-1]
+        //note: This is not to add new values, it is only to replace old ones. 
+        String sea = data[index];
+        data[index] = element;
+        return sea;
+    }
+
     private void resize() {
         //-Increase the capacity by :
         //creating a larger array
