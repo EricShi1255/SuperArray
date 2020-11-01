@@ -4,6 +4,7 @@ public class SuperTester {
         a.add("a");
         a.add("b");
         System.out.println(a.size());
+        System.out.println(a.get(1));
     }
     
 
