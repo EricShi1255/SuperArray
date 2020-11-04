@@ -21,9 +21,8 @@ public class SuperTester {
         words.add("13");
         words.add("uni");
         words.add("ebi");
-        for(int i = 0; i < words.size(); i++){
-            System.out.println( words.get(i) );
-        }
+        words.clear();
+        System.out.println(words.toString());
     }
     
 
