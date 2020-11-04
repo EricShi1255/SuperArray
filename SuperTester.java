@@ -8,7 +8,6 @@ public class SuperTester {
         SuperArray words = new SuperArray();
         words.add("1");
         words.add("2");
-        words.add("3");
         words.add("4");
         words.add("5");
         words.add("6");
@@ -21,6 +20,7 @@ public class SuperTester {
         words.add("13");
         words.add("uni");
         words.add("ebi");
+        words.add(2,"APPLE");
         //words.clear();
         System.out.println(words.toString());
         System.out.println(words.contains("uni"));

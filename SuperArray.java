@@ -46,6 +46,7 @@ public class SuperArray {
         //note: This is not to add new values, it is only to replace old ones. 
         String sea = data[index];
         data[index] = element;
+        size();
         return sea;
     }
 
@@ -59,6 +60,7 @@ public class SuperArray {
             arr[i] = data[i];   
         }
         data = arr;
+        size();
     }
 
     public void clear() {
@@ -97,6 +99,27 @@ public class SuperArray {
             }
         }
         return false;
+    }
+    public void add(int index, String element) {
+        //Inserts the specified element at the specified position in this list
+        // Shifts the element currently at that position (if any) and any subsequent elements to the right.
+        String[] result = new String[data.length+1];
+        boolean shift = false;
+        for (int i = 0; i < data.length; i++) {
+            if (!shift && i != index) {
+                result[i] = data[i];
+            } 
+            else if (i == index) {
+                shift = true;
+                result[i] = element;
+            }
+            else if (shift) {
+                result[i+1] = data[i];
+            }
+        }
+        data = result;
+        size();
+
     }
     
 }
