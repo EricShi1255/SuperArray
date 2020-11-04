@@ -1,6 +1,6 @@
 public class SuperTester {
     public static void main(String[] args) {
-        SuperArray a = new SuperArray();
+        SuperArray a = new SuperArray(5);
         a.add("a");
         a.add("b");
         System.out.println(a.size());
@@ -21,9 +21,9 @@ public class SuperTester {
         words.add("13");
         words.add("uni");
         words.add("ebi");
-        words.clear();
+        //words.clear();
         System.out.println(words.toString());
+        System.out.println(words.contains("uni"));
     }
     
-
 }

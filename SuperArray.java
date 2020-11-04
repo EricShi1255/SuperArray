@@ -5,6 +5,9 @@ public class SuperArray {
     public SuperArray() {
         data = new String[10];
    }
+    public SuperArray(int initialCapacity) {
+        data = new String[initialCapacity];
+    }
     public int size() {
         int count = 0;
         for (int i = 0; i < data.length; i++) {
@@ -15,6 +18,7 @@ public class SuperArray {
         size = count;
         return count;
    }
+    
    public boolean add(String element) {
     //-Appends the specified element to the end of this list. 
     boolean added = false;
@@ -25,12 +29,11 @@ public class SuperArray {
             }
         }
         if (!added) {
-            size();
             resize();
             data[size]= element;
         }
-
-    return true;
+        size();
+        return true;
     }
     public String get(int index) {
         //-Returns the element at the specified position in this list. [For Now Assume the index is 0 to size-1]
@@ -56,6 +59,44 @@ public class SuperArray {
             arr[i] = data[i];   
         }
         data = arr;
+    }
+
+    public void clear() {
+        String[] clean = new String[data.length];
+        data = clean;
+        size();
+    }
+
+
+    public boolean isEmpty() {
+        return(size() == 0);
+    }
+
+    public String toString() {
+        if (data.length == 0 || size == 0) {
+            return("[]");
+          }
+          String result = "[";
+          for (int i = 0; i < data.length-1; i ++) {
+            if (data[i] != null) {
+            result= result + data[i] +  ", ";
+            }
+          }
+        if (data[data.length-1] != null) {
+            result +=  data[data.length-1];
+        }
+        else {
+            result = result.substring(0, result.length()-2);
+        }        
+          return(result + "]");
+    }
+    public boolean contains(String s) {
+        for (int i = 0; i < data.length; i++) {
+            if (s.equals(data[i])) {
+                return true;
+            }
+        }
+        return false;
     }
     
 }
