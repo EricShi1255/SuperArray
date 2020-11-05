@@ -119,7 +119,28 @@ public class SuperArray {
         }
         data = result;
         size();
-
+    }
+    public String remove(int index) {
+        //	Removes the element at the specified position in this list.
+        //Shifts any subsequent elements to the left. The returned value is the element you remove.
+        String[] result = new String[data.length-1];
+        String removed = "";
+        boolean shift = false;
+        for (int i = 0; i < data.length-1; i++) {
+            if (!shift && i != index) {
+                result[i] = data[i];
+            } 
+            else if (i == index) {
+                removed = data[i];
+                shift = true;
+            }
+            else if (shift) {
+                result[i-1] = data[i];
+            }
+        }
+        data = result;
+        size();
+        return(removed);
     }
     
 }
