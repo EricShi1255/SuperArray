@@ -142,5 +142,15 @@ public class SuperArray {
         size();
         return(removed);
     }
+    public int indexOf(String s) {
+        //Returns the index of the first occurrence of the specified element in this list
+        //-1 if this list does not contain the element. 
+        for (int i = 0; i < data.length; i++) {
+            if (s.equals(data[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
     
 }
