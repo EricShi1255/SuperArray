@@ -152,5 +152,15 @@ public class SuperArray {
         }
         return -1;
     }
+    public String[] toArray() {
+	    //Returns an array containing all of the elements in this list in proper sequence (from first to last element).
+        //The returned array will be "safe" in that no references to it are maintained by this list. \
+        //(In other words, this method must allocate a new array).
+        String[] result = new String[data.length];
+        for (int i = 0; i < data.length; i++) {
+            result[i] = data[i];
+        }
+        return result;
+    }
     
 }

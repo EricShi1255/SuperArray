@@ -1,3 +1,4 @@
+import java.util.*;
 public class SuperTester {
     public static void main(String[] args) {
         SuperArray a = new SuperArray(5);
@@ -6,8 +7,10 @@ public class SuperTester {
         System.out.println(a.size());
         System.out.println(a.get(1));
         SuperArray words = new SuperArray();
+        words.add("0");
         words.add("1");
         words.add("2");
+        words.add("3");
         words.add("4");
         words.add("5");
         words.add("6");
@@ -16,14 +19,15 @@ public class SuperTester {
         words.add("9");
         words.add("10");
         words.add("11");
-        words.add("12");
-        words.add("13");
-        words.add("uni");
+        words.add("0");
         words.add("ebi");
         words.add(2,"APPLE");
+        words.remove(5);
         //words.clear();
         System.out.println(words.toString());
         System.out.println(words.contains("uni"));
+        System.out.println(words.indexOf("APPLE"));
+        System.out.print(Arrays.toString(words.toArray()));
     }
     
 }
