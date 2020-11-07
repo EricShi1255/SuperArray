@@ -162,15 +162,29 @@ public class SuperArray {
         }
         return result;
     }
-    public static void removeDuplicates(SuperArray s){
-        for (int i = 0; i < s.size(); i++) {
-            int firsta = s.indexOf(s.get(i));
-            for (int j = 0; j < s.size(); j++) {
-                if (s.get(j) == s.get(firsta) && j != firsta) {
-                    s.remove(j);
+
+    public int lastIndexOf(String value){
+        for (int i = size; i > 0; i--) {
+            if (value.equals(data[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public boolean equals(SuperArray other){
+        if (size == other.size()) {
+            for (int i = 0; i < size; i++) {
+                if (data[i] != other.get(i)) {
+                    return false;
                 }
             }
         }
+        else {
+            return false;
+        }
+        return true;
     }
-    public static SuperArray findOverlap(SuperArray a, SuperArray b) {}
+
+
+    
 }
