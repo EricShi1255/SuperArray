@@ -57,7 +57,7 @@ public class SuperArray {
         data[index] = element;
         size();
         return sea;
-    }
+    }   
 
     private void resize() {
         //-Increase the capacity by :
