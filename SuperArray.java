@@ -6,6 +6,9 @@ public class SuperArray {
         data = new String[10];
    }
     public SuperArray(int initialCapacity) {
+        if (initialCapacity < 0) {
+            throw new IllegalArgumentException("Initial capacity cannot be negative");
+        } 
         data = new String[initialCapacity];
     }
     public int size() {
@@ -37,6 +40,9 @@ public class SuperArray {
     }
     public String get(int index) {
         //-Returns the element at the specified position in this list. [For Now Assume the index is 0 to size-1]
+        if ( (index < 0) || (index >= size()) ) {
+            throw new IndexOutOfBoundsException("Index out of range of size()");
+        }
         return(data[index]);
     }
 
@@ -44,6 +50,9 @@ public class SuperArray {
         //-Replaces the element at the specified position in this list with the specified element.
         //Return the value you replaced. [Assume the index is 0 to size-1]
         //note: This is not to add new values, it is only to replace old ones. 
+        if ( (index < 0) || (index >= size()) ) {
+            throw new IndexOutOfBoundsException("Index out of range of size()");
+        }
         String sea = data[index];
         data[index] = element;
         size();
@@ -103,6 +112,9 @@ public class SuperArray {
     public void add(int index, String element) {
         //Inserts the specified element at the specified position in this list
         // Shifts the element currently at that position (if any) and any subsequent elements to the right.
+        if ( (index < 0) || (index >= size()) ) {
+            throw new IndexOutOfBoundsException("Index out of range of size()");
+        }
         String[] result = new String[data.length+1];
         boolean shift = false;
         for (int i = 0; i < data.length; i++) {
@@ -123,6 +135,9 @@ public class SuperArray {
     public String remove(int index) {
         //	Removes the element at the specified position in this list.
         //Shifts any subsequent elements to the left. The returned value is the element you remove.
+        if ( (index < 0) || (index >= size()) ) {
+            throw new IndexOutOfBoundsException("Index out of range of size()");
+        }
         String[] result = new String[data.length-1];
         String removed = "";
         boolean shift = false;

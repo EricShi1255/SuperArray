@@ -4,8 +4,8 @@ public class SuperTester {
         SuperArray a = new SuperArray(5);
         a.add("a");
         a.add("b");
-        System.out.println(a.size());
-        System.out.println(a.get(1));
+        //System.out.println(a.size());
+        //System.out.println(a.get(1));
         SuperArray words = new SuperArray();
         words.add("0");
         words.add("1");
@@ -33,6 +33,7 @@ public class SuperTester {
         word.add("3");
         word.add("4");
         word.add("5");
+        System.out.println(words.get(7));
         System.out.println(words.toString());
         System.out.println(words.contains("uni"));
         System.out.println(words.indexOf("0"));
