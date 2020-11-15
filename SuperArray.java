@@ -178,17 +178,6 @@ public class SuperArray {
         return result;
     }
 
-    public static void removeDuplicates(SuperArray s){
-        for (int i = 0; i < s.size(); i++) {
-            int firsta = s.indexOf(s.get(i));
-            for (int j = s.size()-1; j > 0; j--) {
-                if (s.get(j) == s.get(firsta) && j != firsta) {
-                    s.remove(j);
-                }
-            }
-        }
-    }
-
     public int lastIndexOf(String value){
         for (int i = size; i > 0; i--) {
             if (value.equals(data[i])) {
