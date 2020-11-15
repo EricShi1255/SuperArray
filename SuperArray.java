@@ -181,7 +181,7 @@ public class SuperArray {
     public static void removeDuplicates(SuperArray s){
         for (int i = 0; i < s.size(); i++) {
             int firsta = s.indexOf(s.get(i));
-            for (int j = 0; j < s.size(); j++) {
+            for (int j = s.size()-1; j > 0; j--) {
                 if (s.get(j) == s.get(firsta) && j != firsta) {
                     s.remove(j);
                 }
