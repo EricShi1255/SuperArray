@@ -184,6 +184,10 @@ public class SuperArray {
             for (int j = 0; j < s.size(); j++) {
                 if (s.get(j) == s.get(firsta) && j != firsta) {
                     s.remove(j);
+                }
+            }
+        }
+    }
 
     public int lastIndexOf(String value){
         for (int i = size; i > 0; i--) {
